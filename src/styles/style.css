@@ -1,0 +1,258 @@
+body {
+    display: block;
+    margin: 0;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    font-family: 'Helvetica Neue';
+}
+
+#content {
+    display: grid;
+    grid-template-columns: minmax(150px, 450px) auto;
+    height: 100%;
+}
+
+#sidebar {
+    background-color: #2E2A31;
+    padding-top: 20px;
+    padding-bottom: 10px;
+}
+
+#main-section {
+    background-color: #262128;
+}
+
+#list-section {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+#my-lists {
+    width: 100%;
+    color: lightgray;
+}
+
+.list {
+    display: flex;
+    align-items: center;
+    height: 50px;
+    margin-top: 10px;
+}
+
+.list-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 25px;
+    width: 25px;
+    padding: 5px;
+    background-color: #FF9502;
+    color: white;
+    font-size: 100%;
+    border: 1px solid transparent;
+    border-radius: 50%;
+}
+
+
+.list-name {
+    height: 20px;
+    width: 100%;
+    padding-left: 15px;
+    font-size: 1.25em;
+    color: white;
+}
+
+.list-count {
+    height: 20px;
+    width: 20px;
+    font-size: 1.25em;
+    color: white;
+}
+
+#sidebar-add-list {
+    display: flex;
+    align-items: center;
+    margin-top: auto;
+}
+
+#sidebar-add-list-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 20px;
+    width: 20px;
+    font-size: 50%;
+    color: lightgray;
+    border: 1px solid lightgray;
+    border-radius: 50%;
+}
+
+#sidebar-add-list-icon:hover {
+    cursor: pointer;
+}
+
+#sidebar-add-list-name {
+    height: 20px;
+    padding-left: 10px;
+    color: lightgray;
+}
+
+#sidebar-add-list-name:hover {
+    cursor: pointer;
+}
+
+#main-section {
+    display: flex;
+    flex-direction: column;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+#main-section-add-list {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    height: 40px;
+    width: 100%;
+    color: lightgray;
+}
+
+#main-section-add-list > div > i:hover {
+    cursor: pointer;
+}
+
+#list-header {
+    display: flex;
+    justify-content: space-between;
+    height: 60px;
+    width: 100%;
+    margin-top: 10px;
+    font-size: 2em;
+    color: #FF9502;
+}
+
+#list-header-name {
+    font-weight: bold;
+}
+
+.list-item {
+    display: flex;
+    flex-direction: column;
+    height: 60px;
+    width: 100%;
+}
+
+.list-item-title-row {
+    display: flex;
+    align-items: center;
+    height: 50%;
+    width: 100%;
+}
+
+.list-item-checkbox {
+    height: 20px;
+    width: 20px;
+    border: 1px solid lightgray;
+    border-radius: 50%;
+}
+
+.list-item-title {
+    padding-left: 20px;
+    color: white;
+}
+
+.list-item-date-row {
+    height: 50%;
+    width: 100%;
+    padding-left: 40px;
+}
+
+.list-item-date {
+    color: white;
+}
+
+.new-list-item {
+    display: flex;
+    flex-direction: column;
+    height: 90px;
+    width: 100%;
+}
+
+.new-list-item-title-row {
+    display: flex;
+    align-items: center;
+    height: 33%;
+    width: 100%;
+}
+
+.new-list-item-checkbox {
+    height: 20px;
+    width: 20px;
+    border: 1px solid lightgray;
+    border-radius: 50%;
+}
+
+.new-list-item-title {
+    height: 100%;
+    width: 100%;
+    padding-left: 20px;
+}
+
+.new-list-item-title > input {
+    box-sizing: border-box;
+    height: 100%;
+    width: 100%;
+    color: white;
+    background-color: transparent;
+    border: none;
+    outline: none;
+}
+
+.new-list-item-notes-row {
+    display: flex;
+    height: 33%;
+    width: 100%;
+    padding-left: 40px;
+}
+
+.new-list-item-notes {
+    height: 100%;
+    width: 100%;
+}
+
+::placeholder {
+    color: white;
+}
+
+.new-list-item-notes > input {
+    box-sizing: border-box;
+    height: 100%;
+    width: 100%;
+    font-size: 1em;
+    color: white;
+    background-color: transparent;
+    border: none;
+    outline: none;
+}
+
+.new-list-item-date-row {
+    display: flex;
+    height: 33%;
+    width: 100%;
+    padding-left: 40px;
+}
+
+.new-list-item-date {
+    padding: 0;
+}
+
+input[type="date"] {
+    background-color: transparent;
+    border: none;
+    font-size: 1em;
+    color: white;
+}
