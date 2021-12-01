@@ -1,3 +1,4 @@
+import PubSub from "pubsub-js";
 import { list } from "postcss";
 import List from "./list";
 import './styles/style.css';
