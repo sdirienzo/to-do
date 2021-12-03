@@ -1,11 +1,17 @@
 export default class List {
+    #id;
     #name;
     #color;
     #toDos = [];
 
-    constructor(name, color) {
+    constructor(id, name, color) {
+        this.#id = id;
         this.#name = name;
         this.#color = color;
+    }
+
+    get id() {
+        return this.#id;
     }
 
     get name() {
