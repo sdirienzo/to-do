@@ -64,17 +64,32 @@ body {
 
 
 .list-name {
-    width: 100%;
     padding-left: 15px;
     font-size: 1.25em;
     color: white;
 }
 
+.list-name:hover {
+    cursor: pointer;
+}
+
 .list-count {
     height: 20px;
     width: 20px;
+    margin-left: auto;
     font-size: 1.25em;
     color: white;
+}
+
+.list-delete {
+    height: 20px;
+    width: 20px;
+    font-size: 1.25em;
+    color: lightgray;
+}
+
+.list-delete:hover {
+    cursor: pointer;
 }
 
 .list-name > input {
@@ -127,7 +142,7 @@ body {
     padding-right: 20px;
 }
 
-#main-section-add-list {
+#main-section-add-todo {
     display: flex;
     justify-content: flex-end;
     align-items: center;
@@ -136,7 +151,7 @@ body {
     color: lightgray;
 }
 
-#main-section-add-list > div > i:hover {
+#main-section-add-todo > div > i:hover {
     cursor: pointer;
 }
 
@@ -147,77 +162,99 @@ body {
     width: 100%;
     margin-top: 10px;
     font-size: 2em;
-    color: #FF9502;
 }
 
 #list-header-name {
     font-weight: bold;
 }
 
-.list-item {
-    display: flex;
-    flex-direction: column;
-    height: 60px;
-    width: 100%;
-}
-
-.list-item-title-row {
-    display: flex;
-    align-items: center;
-    height: 50%;
-    width: 100%;
-}
-
-.list-item-checkbox {
-    height: 20px;
-    width: 20px;
-    border: 1px solid lightgray;
-    border-radius: 50%;
-}
-
-.list-item-title {
-    padding-left: 20px;
-    color: white;
-}
-
-.list-item-date-row {
-    height: 50%;
-    width: 100%;
-    padding-left: 40px;
-}
-
-.list-item-date {
-    color: white;
-}
-
-.new-list-item {
-    display: flex;
-    flex-direction: column;
-    height: 90px;
-    width: 100%;
-}
-
-.new-list-item-title-row {
-    display: flex;
-    align-items: center;
-    height: 33%;
-    width: 100%;
-}
-
-.new-list-item-checkbox {
-    height: 20px;
-    width: 20px;
-    border: 1px solid lightgray;
-    border-radius: 50%;
-}
-
-.new-list-item-title {
+#todos-section {
     height: 100%;
     width: 100%;
-    padding-left: 20px;
+    overflow-y: auto;
 }
 
-.new-list-item-title > input {
+.todo {
+    display: inline-block;
+    width: 100%;
+}
+
+.todo-title-row {
+    display: flex;
+    align-items: center;
+    height: 30px;
+}
+
+.todo-checkbox {
+    height: 20px;
+    width: 20px;
+    border: 1px solid lightgray;
+    border-radius: 50%;
+}
+
+.todo-checkbox:hover {
+    cursor: pointer;
+}
+
+.todo-title {
+    margin-left: 20px;
+    color: white;
+}
+
+.todo-title:hover {
+    cursor: pointer;
+}
+
+.todo-notes-row {
+    display: flex;
+    height: 30px;
+    margin-left: 43px;
+}
+
+.todo-notes {
+    height: 100%;
+    width: 100%;
+    font-size: 1em;
+    color: white;
+}
+
+.todo-notes:hover {
+    cursor: pointer;
+}
+
+.todo-date-row {
+    height: 30px;
+    margin-left: 43px;
+}
+
+.todo-date {
+    color: white;
+}
+
+.todo-date:hover {
+    cursor: pointer;
+}
+
+.new-todo-title-row {
+    display: flex;
+    align-items: center;
+    height: 30px;
+}
+
+.new-todo-checkbox {
+    height: 20px;
+    width: 20px;
+    border: 1px solid lightgray;
+    border-radius: 50%;
+}
+
+.new-todo-title {
+    height: 100%;
+    width: 100%;
+    margin-left: 20px;
+}
+
+.new-todo-title > input {
     box-sizing: border-box;
     height: 100%;
     width: 100%;
@@ -228,14 +265,13 @@ body {
     outline: none;
 }
 
-.new-list-item-notes-row {
+.new-todo-notes-row {
     display: flex;
-    height: 33%;
-    width: 100%;
-    padding-left: 40px;
+    height: 30px;
+    margin-left: 43px;
 }
 
-.new-list-item-notes {
+.new-todo-notes {
     height: 100%;
     width: 100%;
 }
@@ -244,7 +280,7 @@ body {
     color: white;
 }
 
-.new-list-item-notes > input {
+.new-todo-notes > input {
     box-sizing: border-box;
     height: 100%;
     width: 100%;
@@ -255,15 +291,10 @@ body {
     outline: none;
 }
 
-.new-list-item-date-row {
+.new-todo-date-row {
     display: flex;
-    height: 33%;
-    width: 100%;
-    padding-left: 40px;
-}
-
-.new-list-item-date {
-    padding: 0;
+    height: 30px;
+    margin-left: 43px;
 }
 
 input[type="date"] {
