@@ -1,12 +1,24 @@
 export default class ToDo {
+    #id;
+    #listId;
     #title;
     #notes;
     #dueDate;
 
-    constructor(title, notes, dueDte) {
+    constructor(id, listId, title, notes, dueDate) {
+        this.#id = id;
+        this.#listId = listId;
         this.#title = title;
         this.#notes = notes;
-        this.#dueDate = dueDte;
+        this.#dueDate = dueDate;
+    }
+
+    get id() {
+        return this.#id;
+    }
+
+    get listId() {
+        return this.#listId;
     }
 
     get title() {
@@ -17,7 +29,7 @@ export default class ToDo {
         return this.#notes;
     }
 
-    get dueDte() {
+    get dueDate() {
         return this.#dueDate;
     }
 
@@ -29,7 +41,7 @@ export default class ToDo {
         this.#notes = notes;
     }
 
-    set dueDte(dueDate) {
+    set dueDate(dueDate) {
         this.#dueDate = dueDate;
     }
 }

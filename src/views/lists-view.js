@@ -1,4 +1,4 @@
-class SidebarView {
+class ListsView {
     listColors = ['#FF453B',
                     '#FF9F0C',
                     '#FFD60B',
@@ -11,6 +11,7 @@ class SidebarView {
                     '#C9A675',
                     '#727E87',
                     '#EBB5AE'];
+    pubSub;
     sidebar;
     myLists;
     myListsTitle;
@@ -19,8 +20,7 @@ class SidebarView {
     addListIconContainer;
     addListIcon;
     addListName;
-    pubSub;
-
+    
     constructor(pubSub) {
         this.pubSub = pubSub;
 
@@ -70,6 +70,8 @@ class SidebarView {
         this.addListName.addEventListener('click', () => {
             this.displayAddNewListInput(this.generateRandomListColor());
         });
+
+        this.applyEventListeners();
     }
 
     getElement(selector) {
@@ -108,6 +110,7 @@ class SidebarView {
 
         lists.forEach(list => {
             const listDiv = this.createElement('div', 'list');   
+            listDiv.id = list.id;
             
             const iconDiv = this.createElement('div', 'list-icon');
             iconDiv.style.backgroundColor = list.color;
@@ -119,11 +122,19 @@ class SidebarView {
             
             const listCountDiv = this.createElement('div', 'list-count');
             listCountDiv.innerText = list.numToDos;
+
+            const listDelete = this.createElement('div', 'list-delete');
+            listDelete.innerText = 'X';
      
             iconDiv.appendChild(icon);
             listDiv.appendChild(iconDiv);
             listDiv.appendChild(listNameDiv);
             listDiv.appendChild(listCountDiv);
+            listDiv.appendChild(listDelete);
+
+            listNameDiv.addEventListener('click', (event) => {
+                this.pubSub.publish('display-list', list);
+            })
     
             this.listSection.appendChild(listDiv);
         });
@@ -158,6 +169,16 @@ class SidebarView {
         this.listSection.appendChild(listDiv);
         listNameInput.focus();
     }
+
+    applyEventListeners() {
+        this.listSection.addEventListener('click', ({ target }) => {
+            if (target.className === 'list-delete') {
+                const listData = {};
+                listData.id = parseInt(target.parentNode.id);
+                this.pubSub.publish('delete-list', listData);
+            }
+        });
+    }
 }
 
-export default SidebarView;
+export default ListsView;
